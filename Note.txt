@@ -1,0 +1,37 @@
+* Python Web Framework
+* Server Side Framework
+* MVT Design Pattern
+* Batteries Included
+
+
+MVT -> Model View Template
+
+* Web Framework: Collection of modules, packages and libraries designed to
+speed up development
+
+* Django has it's templating engine which can be the substitute of a frontend Template
+
+* Other Python Frameworks
+- Flask
+- Cherry Pie
+- Web2py
+- Pyramid
+
+* MVT Model Structure
+
+Model - Data Access Layer
+Template - Presentation Layer -> Users see this part
+View - Business Logic 
+
+* open cmd in current folder
+Just go to your folder location and type "cmd" on the address bar
+
+* Virtual Environment helps with the installation process
+and reduces conflict between installed files
+
+* pip install env 
+This creates a virtual environment
+
+* django-admin
+This command is for seeing all the packages which can be used
+
