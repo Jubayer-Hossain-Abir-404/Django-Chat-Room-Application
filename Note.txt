@@ -35,3 +35,9 @@ This creates a virtual environment
 * django-admin
 This command is for seeing all the packages which can be used
 
+* make-migrations and migrate are gonna be used with when working on database
+
+* runserver gonna start development server
+
+* Startapp and startproject is going to be used to
+

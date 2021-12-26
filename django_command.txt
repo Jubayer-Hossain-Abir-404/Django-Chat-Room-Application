@@ -1,0 +1,3 @@
+* django-admin startproject chatroom
+
+* python manage.py runserver

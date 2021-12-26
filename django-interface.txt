@@ -1,0 +1,22 @@
+* For production mysql is used rather
+than db.sqlite3
+
+* For wsgi -> Web Server Gateway Interface
+
+* urls contains the list of different URL
+
+* ASGI means asynchronus
+
+Django does have asynchronus support
+
+* Main file which is going to be a matter of concern is 
+settings.py and urls.py
+
+* settigs.py is the core project configuartion
+command center to the entire project
+
+* All the URL's that are allowed to go to the website
+
+* Apps are a little part of a website which handles different part of a website
+
+* Models are known as database
