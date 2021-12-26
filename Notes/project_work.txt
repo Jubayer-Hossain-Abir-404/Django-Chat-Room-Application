@@ -1,0 +1,21 @@
+'base.apps.BaseConfig',
+
+In order to introduce the newly created app to
+the project this line
+
+'base.apps.BaseConfig',
+
+must be added to main project settings.py
+installed apps
+
+* All of our views are going to be handled
+inside of the views.py file from that app we created
+here known as base
+
+* chatroom urls.py is the core url file
+
+* chatroom urls.py
+one will be root urls and other one will be for the
+specific file
+
+* request object is going to be like the http object

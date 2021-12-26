@@ -20,3 +20,18 @@ command center to the entire project
 * Apps are a little part of a website which handles different part of a website
 
 * Models are known as database
+
+* python manage.py startapp base 
+After creating it a folder will be created
+After creation django right now doesn't know about this app
+Right now all it is just folder inside the project
+
+In the newly created app folder
+
+* views.py
+will fire off things like any kind of queries to the database
+any templates that needed to be render
+this is going to be called when a specific url is called
+
+* Models.py
+In here database is going to be configured
