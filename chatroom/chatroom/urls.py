@@ -1,19 +1,9 @@
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
-
-#request object is going to be like the http object
-def home(request):
-    return HttpResponse ('Home Page')
-
-
-def rooms(request):
-    return HttpResponse('Room')
-      
+from django.urls import path, include # inlcude is imported 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('room/', rooms)
+    path('',include('base.urls')) # Here base app is included all the urlpatterns 
+                                  # from base is found here
 ]

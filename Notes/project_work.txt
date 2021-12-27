@@ -36,3 +36,9 @@ home text is just calling out the home function
 
 * path('room/', rooms)
 This creates another path
+
+
+* For a better practice home, room function will be moved to the base view.py
+
+* urls.py code will be created in the base
+and from that code will be called
