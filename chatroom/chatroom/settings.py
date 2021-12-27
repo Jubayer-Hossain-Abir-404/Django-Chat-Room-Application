@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'base.apps.BaseConfig',
+    'base.apps.BaseConfig',   # This one is app configuring
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,11 @@ ROOT_URLCONF = 'chatroom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'  # By putting this now django knows that template can be found
+                                    #  in this specific folder
+                                    # this one is templates folder configuring
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
