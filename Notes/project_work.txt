@@ -19,3 +19,16 @@ one will be root urls and other one will be for the
 specific file
 
 * request object is going to be like the http object
+
+* from django.http import HttpResponse
+This is used to return HttpResponse
+
+* def home(request):
+    return HttpResponse ('Home Page')  // This hom page text will be shown i the browser
+
+This is the function that returns HttpResponse
+
+* path('', home),
+
+In urlpatterns this is written
+home text is just calling out the home function
