@@ -24,11 +24,15 @@ specific file
 This is used to return HttpResponse
 
 * def home(request):
-    return HttpResponse ('Home Page')  // This hom page text will be shown i the browser
+    return HttpResponse ('Home Page')  // This home page text will be shown in the browser
 
 This is the function that returns HttpResponse
 
-* path('', home),
+* path('', home), As the quote doesn't contain anything that's why the project is first
+loaded home function is being called 
 
 In urlpatterns this is written
 home text is just calling out the home function
+
+* path('room/', rooms)
+This creates another path
