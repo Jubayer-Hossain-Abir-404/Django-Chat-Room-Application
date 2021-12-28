@@ -13,7 +13,8 @@ rooms1 = [
 #request object is going to be like the http object
 # return HttpResponse ('Home Page') # this returns html code directly
 def home(request):
-    return render(request, 'home.html', {'rooms': rooms1}) 
+    context = {'rooms': rooms1}
+    return render(request, 'home.html', context) 
 
 def rooms(request):
     # return HttpResponse('Room')
