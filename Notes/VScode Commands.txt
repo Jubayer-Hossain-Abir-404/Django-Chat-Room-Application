@@ -1,1 +1,3 @@
 * ctrl+ ~ to get the terminal
+
+* just type html boiler plate to get the html boiler plate

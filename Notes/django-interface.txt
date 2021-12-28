@@ -35,3 +35,5 @@ this is going to be called when a specific url is called
 
 * Models.py
 In here database is going to be configured
+
+* To get the django boiler plate html5 boiler plate extension should be installed

@@ -1,0 +1,43 @@
+* { % block content %}
+
+
+{ % endblock %}
+
+This is used to wrap a content
+It's going to tell the website where to add all these child templates
+when we wrap a parent or another template in the website
+
+When going to home page the home page content is going to be i here
+when going to room the room content is going to be in here 
+
+
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Home Template</h1>
+
+{% endblock content %}
+
+* Here, extends is used rather than include.
+This extends the file main.html file from the template
+and then h1 home template will be wrapped
+Basically the parent block is empty
+child block is filling up that content
+
+* {% block content %}
+
+
+{% endblock %}
+
+% should be at both the corner -> otherwise it will not work
+
+
+* {% extends 'main.html' %}
+
+{% block content %}
+<h1>Home Template</h1>
+
+{% endblock content %}
+
+there should be nothing above {% extends 'main.html' %}
+otherwise there will be error
