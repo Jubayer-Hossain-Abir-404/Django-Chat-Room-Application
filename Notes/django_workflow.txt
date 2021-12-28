@@ -32,7 +32,7 @@ child block is filling up that content
 % should be at both the corner -> otherwise it will not work
 
 
-* {% extends 'main.html' %}
+* {% extends 'main.html' %}  '' should be added
 
 {% block content %}
 <h1>Home Template</h1>
@@ -41,3 +41,37 @@ child block is filling up that content
 
 there should be nothing above {% extends 'main.html' %}
 otherwise there will be error
+
+* Template engine
+
+
+* Have to close the loop statement
+and if statement in template
+
+* rooms1 = [
+    {'id': 1, 'name': 'Lets learn python'},
+    {'id': 2, 'name': 'Design with me'},
+    {'id': 3, 'name': 'Frontend Developers'},
+]
+This is how a list could be created
+
+* def home(request):
+    return render(request, 'home.html', {'rooms': rooms1}) 
+
+data could rendered like this to the template engine
+*reminder -> function name and dictionary list shouldn't be the statement
+
+* <div>
+    <div>
+        
+        {% for room in rooms %}
+            <div>
+                <h5>{{room.id}} -- {{room.name}}</h5>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+This is how loop can be created and rendered data from views can be displayed
+

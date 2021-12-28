@@ -3,12 +3,17 @@ from django.shortcuts import render
 
 # Create your views here.
 
-#request object is going to be like the http object
-def home(request):
-    # return HttpResponse ('Home Page') # tis returns html code directly
-    return render(request, 'home.html') # as template has been configured 
-                                        # now it can get the file directly and request is the object
+rooms1 = [
+    {'id': 1, 'name': 'Lets learn python'},
+    {'id': 2, 'name': 'Design with me'},
+    {'id': 3, 'name': 'Frontend Developers'},
+]
 
+
+#request object is going to be like the http object
+# return HttpResponse ('Home Page') # this returns html code directly
+def home(request):
+    return render(request, 'home.html', {'rooms': rooms1}) 
 
 def rooms(request):
     # return HttpResponse('Room')
