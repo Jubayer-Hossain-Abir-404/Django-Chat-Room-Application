@@ -4,4 +4,10 @@
 
 * python manage.py startapp base  
 
-*  python manage.py migrate
+*  python manage.py migrate  # This will be used before working on model
+    # and after doing each makemigrations
+
+* python manage.py makemigrations # This will be used after working on some level
+on model
+
+* python manage.py createsuperuser # to log into the admin panel

@@ -1,2 +1,9 @@
 Python Class
 (Inherits from Django Models)
+
+* With each new migrations a new file is going to be created
+
+* To run that or use that migrations
+python manage.py migrate
+
+command is going to be used
