@@ -1,0 +1,6 @@
+{% url 'room' room.id %}
+
+This is how url's can be specified and values can be sent too
+
+* path('room/<str:pk>/', views.rooms, name="rooms")
+That's how name is important because it takes the name value
