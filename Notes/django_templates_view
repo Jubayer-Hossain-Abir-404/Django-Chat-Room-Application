@@ -1,0 +1,11 @@
+* The files which are globally needed should be kept in the folder templates
+which is inside the root
+
+* And for files specified for an app should kept like this
+
+app folder -> templates -> app folder name -> html file name
+
+
+* home.html and room.html can get all the values from views.py if
+data is sent through like context
+
