@@ -78,3 +78,6 @@ This is how loop can be created and rendered data from views can be displayed
 * As for viewing data main.html and navbar.html is going to be used everywhere
 whereas home.html and room.html is going to be specified for the base app
 
+* python manage.py migrate
+This builds the database. By applying this all the migrations get occurred
+
