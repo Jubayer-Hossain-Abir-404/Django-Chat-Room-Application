@@ -75,3 +75,6 @@ data could rendered like this to the template engine
 
 This is how loop can be created and rendered data from views can be displayed
 
+* As for viewing data main.html and navbar.html is going to be used everywhere
+whereas home.html and room.html is going to be specified for the base app
+
