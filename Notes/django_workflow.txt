@@ -101,4 +101,8 @@ because of '-' the list is going to be displayed in reverse order
 * topic__name
 query upwards 
 
+* Just add new html file in the template
+Then add that in the view
+Add that to the url
+
 

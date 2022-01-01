@@ -3,8 +3,12 @@
 </a>
 
 
+
 <form method="GET" action="{% url 'home' %}">
     <input type="text" name="q" placeholder="Search Rooms..." />
 </form>
+
+<!-- Here 'login' means it is actually referring to the value in url -->
+<a href="{% url 'login' %}">Login</a> 
 
 <hr>

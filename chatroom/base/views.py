@@ -15,6 +15,13 @@ from .forms import RoomForm
 
 #request object is going to be like the http object
 # return HttpResponse ('Home Page') # this returns html code directly
+
+
+def loginpage(request):
+    # if request.method
+    context ={}
+    return render(request, 'base/login_register.html', context)
+
 def home(request):
     # inline if statement
     # it's going to be checked if the request method has something
