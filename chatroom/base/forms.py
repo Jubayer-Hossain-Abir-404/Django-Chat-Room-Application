@@ -13,4 +13,9 @@ class RoomForm(ModelForm):
         # this will create the form based on the metadata of this room right here
         # the non-editable fields won't show up 
         # basically creating a form based on all those values
+        # it's going to be give all those values
+        # hide values like the user because that should be auto-genarated
+        # like the logged in user that creates the application should know
+        # a user shouldn't be able to specify who they are necessarily in a
+        # drop-down menu
         fields = '__all__'

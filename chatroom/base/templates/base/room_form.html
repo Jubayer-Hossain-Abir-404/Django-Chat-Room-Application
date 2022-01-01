@@ -7,7 +7,10 @@
         <!-- This is used to take care of any malicious attacks
          no forgery occurs, not mess with the form input -->
         {% csrf_token %}
-        
+        <!-- Because that's how it was passed into the form -->
+        <!-- as_p it will wrap a paragraph tag around every input field that the 
+            form has  -->
+        {{ form.as_p }}  
         <input type="submit" value="Submit"/>
 
     </form>
