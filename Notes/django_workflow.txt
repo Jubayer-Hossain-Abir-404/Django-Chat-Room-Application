@@ -98,4 +98,7 @@ because of '-' the list is going to be displayed in reverse order
 
 * For each model that has to be registered and imported from model
 
+* topic__name
+query upwards 
+
 

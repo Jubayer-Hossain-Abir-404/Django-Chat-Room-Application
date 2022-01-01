@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Room
+from .models import Room, Topic
 from .forms import RoomForm
 # from django.http import HttpResponse
 
@@ -15,8 +15,25 @@ from .forms import RoomForm
 #request object is going to be like the http object
 # return HttpResponse ('Home Page') # this returns html code directly
 def home(request):
-    rooms1 = Room.objects.all() #this will give all the room in the database
-    context = {'rooms': rooms1}
+    # inline if statement
+    # it's going to be checked if the request method has something
+    # if q!=None then q is the parameter
+    # else q is going to be an empty string
+
+    q= request.GET.get('q') if request.GET.get('q') != None else ''
+    # rooms1 = Room.objects.all() #this will give all the room in the database
+
+    # icontains i is case insensitive
+    # it's going to make sure whatever value we have in the topic name atleast
+    # in here
+    # for example if q contains only py. It's still going to return a positive
+    # match
+    # if no parameter. technically all of the parameters match
+    rooms1 = Room.objects.filter(topic__name__icontains=q) 
+
+    topics = Topic.objects.all()
+
+    context = {'rooms': rooms1, 'topics': topics}
     return render(request, 'base/home.html', context) 
 
 def rooms(request, pk):
