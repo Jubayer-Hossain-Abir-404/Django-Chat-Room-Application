@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
 
     path('login/', views.loginpage, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
     path('', views.home, name="home"),  # here keeping name="home" is a good practice
     path('room/<str:pk>/', views.rooms, name="rooms"), # calling rooms function from views
 

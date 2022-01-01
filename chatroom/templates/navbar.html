@@ -8,7 +8,12 @@
     <input type="text" name="q" placeholder="Search Rooms..." />
 </form>
 
+{% if request.user.is_authenticated %}
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+
 <!-- Here 'login' means it is actually referring to the value in url -->
 <a href="{% url 'login' %}">Login</a> 
+{% endif %}
 
 <hr>
