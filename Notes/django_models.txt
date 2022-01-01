@@ -7,3 +7,21 @@ Python Class
 python manage.py migrate
 
 command is going to be used
+
+*  def __str__(self):
+        return self.name
+
+This is used in python class
+
+
+* from .models import Room
+
+admin.site.register(Room)
+
+Even though Room as a table was created 
+But it was showing in the table
+for first 
+from .models import Room
+this has to be imported
+and then registered
+admin.site.register(Room)
