@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db.models import Q
 from .models import Room, Topic
 from .forms import RoomForm
 # from django.http import HttpResponse
@@ -29,11 +30,17 @@ def home(request):
     # for example if q contains only py. It's still going to return a positive
     # match
     # if no parameter. technically all of the parameters match
-    rooms1 = Room.objects.filter(topic__name__icontains=q) 
+    rooms1 = Room.objects.filter(
+        Q(topic__name__icontains=q) | 
+        Q(name__icontains=q) |
+        Q(description__icontains=q)
+        
+        ) 
 
     topics = Topic.objects.all()
+    room_count = rooms1.count()
 
-    context = {'rooms': rooms1, 'topics': topics}
+    context = {'rooms': rooms1, 'topics': topics, 'room_count':room_count}
     return render(request, 'base/home.html', context) 
 
 def rooms(request, pk):
