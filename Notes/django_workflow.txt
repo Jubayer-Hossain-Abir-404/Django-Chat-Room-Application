@@ -82,5 +82,11 @@ whereas home.html and room.html is going to be specified for the base app
 This builds the database. By applying this all the migrations get occurred
 
 
-* Everything should be in small 
+* Everything should be in small letter 
+when in the template section data is being used
+
+
+* First create template html file
+then add a class to the views.py
+and the go to the urls.py for routing
 

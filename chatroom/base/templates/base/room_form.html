@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        <!-- This is used to take care of any malicious attacks
+         no forgery occurs, not mess with the form input -->
+        {% csrf_token %}
+        
+        <input type="submit" value="Submit"/>
+
+    </form>
+</div>
+
+{% endblock content %}
