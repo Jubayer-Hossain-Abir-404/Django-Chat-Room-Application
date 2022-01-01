@@ -1,0 +1,16 @@
+* queryset = ModelName.objects.all()
+
+queryset = Variable that holds response
+ModelName = Model name
+objects = Model objects attribute
+all() = Method
+ * .all means all the models and all items inside of that
+ database table 
+
+ * .get()
+ get is here to get a single object
+ * .filter()
+ filter which lets filter data
+ * .exclude()
+ that is used to filter items out in like a reverse 
+ order
