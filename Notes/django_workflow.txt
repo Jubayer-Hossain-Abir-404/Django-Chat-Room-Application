@@ -105,4 +105,6 @@ query upwards
 Then add that in the view
 Add that to the url
 
+* Restricted Pages
+
 
