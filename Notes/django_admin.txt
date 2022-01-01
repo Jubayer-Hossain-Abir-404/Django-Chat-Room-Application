@@ -1,9 +1,9 @@
-from django.contrib import admin
-
-# Register your models here.
-
 from .models import Room, Topic, Message
 
 admin.site.register(Room)
 admin.site.register(Topic)
 admin.site.register(Message)
+
+
+Each time a new model is created, it has to be imported in the admin section
+and then get registered

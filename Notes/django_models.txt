@@ -25,3 +25,33 @@ from .models import Room
 this has to be imported
 and then registered
 admin.site.register(Room)
+
+* models by default have a id generated for them
+
+* class Message(models.Model):
+     # user = 
+     room = models.ForeignKey(Room, on_delete=models.SET_NULL)
+
+This is a message model for messaging
+room = models.ForeignKey(Room, on_delete=models.SET_NULL)
+
+Here, foreignkey is used one to many relationship
+on_delete = models.SET_NULL
+means when the parent table is deleted the child table's message 
+will still stay in the database
+
+* on_delete=models.CASCADE
+Meaning all child data related with the parent is going to be deleted
+
+* Here rather than creating a class user like room
+a default user accommodating with django is imported
+
+* Here room is going to be a child of a topic
+
+* A topic can have multiple rooms
+whereas a room can have one single topic
+
+* if topic model is beneath any of the functions
+
+then when the topic is going to be used as a relational class topic 
+should be written as 'Topic'
