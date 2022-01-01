@@ -90,3 +90,12 @@ when in the template section data is being used
 then add a class to the views.py
 and the go to the urls.py for routing
 
+* class Meta:
+        ordering = ['-updated', '-created']
+
+This is ordering is done
+because of '-' the list is going to be displayed in reverse order
+
+* For each model that has to be registered and imported from model
+
+

@@ -28,6 +28,9 @@ class Room(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     # this will be set at the very begining and never change again
 
+    class Meta:
+        ordering = ['-updated', '-created']
+
 
     def __str__(self):
         return self.name  #This will return name
