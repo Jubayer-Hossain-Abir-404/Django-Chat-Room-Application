@@ -18,4 +18,4 @@ class RoomForm(ModelForm):
         # like the logged in user that creates the application should know
         # a user shouldn't be able to specify who they are necessarily in a
         # drop-down menu
-        fields = '__all__'
+        fields = '__all__' # Currently it is just giving all the fields
