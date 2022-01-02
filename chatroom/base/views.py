@@ -35,6 +35,7 @@ def loginpage(request):
 
 
     if request.method == 'POST':
+        # user name has to be in lower case 
         username = request.POST.get('username').lower()
         password = request.POST.get('password')
 
@@ -72,7 +73,9 @@ def registerPage(request):
     if request.method =='POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            # saving this form but freezing it in time
             user = form.save(commit=False)
+            # cleaning the data
             user.username = user.username.lower()
             user.save()
             login(request, user)
