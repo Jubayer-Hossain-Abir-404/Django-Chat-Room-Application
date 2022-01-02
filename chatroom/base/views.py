@@ -24,6 +24,13 @@ from .forms import RoomForm
 
 
 def loginpage(request):
+
+    # This is used so that user can't login again when the user is already
+    # logged in
+    if request.user.is_authenticated:
+        return redirect('home')
+
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -138,7 +145,7 @@ def deleteRoom(request, pk):
 
     if request.user != room.host:
         return HttpResponse('You are not allowed here!!')
-        
+
     if request.method =='POST':
         # simply gonna remove that item
         room.delete()
