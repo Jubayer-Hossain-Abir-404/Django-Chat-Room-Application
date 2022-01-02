@@ -1,0 +1,11 @@
+{% if page=='login' %}
+//
+
+{% else %}
+//
+
+
+{% endif %}
+
+The structure
+

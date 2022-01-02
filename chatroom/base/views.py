@@ -27,6 +27,8 @@ def loginpage(request):
 
     # This is used so that user can't login again when the user is already
     # logged in
+
+    page= 'login'
     if request.user.is_authenticated:
         return redirect('home')
 
@@ -52,13 +54,19 @@ def loginpage(request):
 
 
 
-    context ={}
+    context ={'page': page}
     return render(request, 'base/login_register.html', context)
 
 
 def logoutUser(request):
     logout(request)
     return redirect('home')
+
+
+def registerPage(request):
+    page = 'register'
+    context ={'page': page}
+    return render(request, 'base/login_register.html', context)
 
 def home(request):
     # inline if statement
