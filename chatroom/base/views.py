@@ -119,8 +119,11 @@ def rooms(request, pk):
     #     if i['id'] == int(pk):
     #         room = i
 
-    room = Room.objects.get(id=pk)
-    context = {'room': room}
+    room1 = Room.objects.get(id=pk)
+    # child objects of a specific room can be querid here
+    # set of messages that are related to the specific room is gonna be provided
+    messages = room1.message_set.all()
+    context = {'room': room1, 'messages': messages}
     return render(request, 'base/room.html', context)
 
 # if an user is not authenticated then access will not be provided
