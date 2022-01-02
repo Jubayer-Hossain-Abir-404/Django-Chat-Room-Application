@@ -107,4 +107,9 @@ Add that to the url
 
 * Restricted Pages
 
+* so far % is used in {}
+when there is {% condition %} like if else, loop (1)
+when url is needed to be used
+(1) -> even this is needed when python is used in html
+
 

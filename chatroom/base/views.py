@@ -135,6 +135,10 @@ def updateRoom(request, pk):
 @login_required(login_url='login')
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
+
+    if request.user != room.host:
+        return HttpResponse('You are not allowed here!!')
+        
     if request.method =='POST':
         # simply gonna remove that item
         room.delete()
