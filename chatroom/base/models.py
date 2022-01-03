@@ -18,7 +18,15 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name= models.CharField(max_length=200) # Meaning this can't be blank
                                            # for that null is false
-    description = models.TextField(null=True, blank=True) 
+    description = models.TextField(null=True, blank=True)
+    # This is a many to many relationship
+    # Issue is there is already a user model connected
+    # related name 
+    # can't reference a user because it's already up in there
+    # that's why the related name here is going to be participants
+    # blank=true. Also want to submit a form without having to check
+    # something
+    participants = models.ManyToManyField(User,related_name='participants', blank=True)
     # here textfield true. can be blank
     # it means when form is submitted description can be blank
     # participants = 
