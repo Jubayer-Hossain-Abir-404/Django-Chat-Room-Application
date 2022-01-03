@@ -112,4 +112,6 @@ when there is {% condition %} like if else, loop (1)
 when url is needed to be used
 (1) -> even this is needed when python is used in html
 
+* No staff is allowed to access in the admin panel
+
 
