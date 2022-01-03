@@ -124,7 +124,8 @@ def rooms(request, pk):
     # set of messages that are related to the specific room is gonna be provided
     # Descending order based on created
     room_messages = room1.message_set.all().order_by('-created')
-
+    # For a many to many to relation .all() is enough
+    participants= room1.participants.all()
     if request.method == 'POST':
         # create method will go over there and create an actual message
         message = Message.objects.create(
@@ -135,7 +136,8 @@ def rooms(request, pk):
         # here rooms is coming from the url name="rooms"
         return redirect('rooms', pk=room1.id)
 
-    context = {'room': room1, 'room_messages': room_messages}
+    context = {'room': room1, 'room_messages': room_messages, 
+    'participants': participants}
     return render(request, 'base/room.html', context)
 
 # if an user is not authenticated then access will not be provided
