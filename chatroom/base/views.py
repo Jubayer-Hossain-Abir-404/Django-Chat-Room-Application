@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic
+from .models import Room, Topic, Message
 from .forms import RoomForm
 
 # from django.http import HttpResponse
@@ -124,6 +124,17 @@ def rooms(request, pk):
     # set of messages that are related to the specific room is gonna be provided
     # Descending order based on created
     room_messages = room1.message_set.all().order_by('-created')
+
+    if request.method == 'POST':
+        # create method will go over there and create an actual message
+        message = Message.objects.create(
+            user = request.user,
+            room = room1,
+            body= request.POST.get('body')
+        )
+        # here rooms is coming from the url name="rooms"
+        return redirect('rooms', pk=room1.id)
+
     context = {'room': room1, 'room_messages': room_messages}
     return render(request, 'base/room.html', context)
 
