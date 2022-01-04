@@ -8,8 +8,10 @@
         /* Two columns have been created, this is specifying
         how many fractions of the website or the page that this is 
         going to take up */
-
-        grid-template-columns: 1fr 3fr;
+        /* Two side columns will be one fraction 
+        middle one will take up the most
+        it will be auto adjusted */
+        grid-template-columns: 1fr 3fr 1fr;
     }
 </style>
 <h1>Home Template</h1>
@@ -53,6 +55,21 @@
 
             {% endfor %}
         </div>
+    </div>
+    <div>
+        <h3>Recent Activity</h3>
+        <hr>
+        {% for message in room_messages %}
+            <div>
+                <small>@{{message.user}} {{message.created|timesince}}</small>
+                <small>replied to "{{message.room}}"</small>
+
+                <!-- If it's not specified what attribute it should be displaying
+                then the class name is written then it will just the displayed 
+                value -->
+                <p>{{message}}</p>
+            </div>
+        {% endfor %}
     </div>
     
 </div>

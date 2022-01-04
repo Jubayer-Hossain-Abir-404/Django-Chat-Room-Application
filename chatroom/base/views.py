@@ -109,8 +109,10 @@ def home(request):
 
     topics = Topic.objects.all()
     room_count = rooms1.count()
+    room_messages = Message.objects.all()
 
-    context = {'rooms': rooms1, 'topics': topics, 'room_count':room_count}
+    context = {'rooms': rooms1, 'topics': topics, 'room_count':room_count, 
+    'room_messages': room_messages}
     return render(request, 'base/home.html', context) 
 
 def rooms(request, pk):
@@ -124,7 +126,7 @@ def rooms(request, pk):
     # child objects of a specific room can be querid here
     # set of messages that are related to the specific room is gonna be provided
     # Descending order based on created
-    room_messages = room1.message_set.all().order_by('-created')
+    room_messages = room1.message_set.all()
     # For a many to many to relation .all() is enough
     participants= room1.participants.all()
     if request.method == 'POST':
