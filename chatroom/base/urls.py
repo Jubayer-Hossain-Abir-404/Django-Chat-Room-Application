@@ -11,6 +11,7 @@ urlpatterns = [
     path('register/', views.registerPage, name="register"),
     path('', views.home, name="home"),  # here keeping name="home" is a good practice
     path('room/<str:pk>/', views.rooms, name="rooms"), # calling rooms function from views
+    path('profile/<str:pk>/', views.userProfile, name="user-profile"),
 
     path('create-room/', views.createRoom, name="create-room"),
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),

@@ -144,6 +144,12 @@ def rooms(request, pk):
     'participants': participants}
     return render(request, 'base/room.html', context)
 
+def userProfile(request, pk):
+    user = User.objects.get(id=pk)
+    # context dictionary
+    context = {'user': user}
+    return render(request, 'base/profile.html', context)
+
 # if an user is not authenticated then access will not be provided
 @login_required(login_url='login')
 def createRoom(request):
