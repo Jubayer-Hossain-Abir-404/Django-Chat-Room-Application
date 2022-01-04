@@ -19,61 +19,20 @@
 <div class="home-container">
 
     <div>
-        <h3>Browse Topics</h3>
-        <hr>
-
-        <div>
-            <!-- Here q means query -->
-            <a href="{% url 'home' %}">All</a>
-        </div>
-
-        {% for topic in topics %}
-            <div>
-                <!-- Here q means query -->
-                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
-            </div>
-
-        {% endfor %}
+        {% include 'base/topics_component.html' %}
     </div>
 
     <div>
         <h5>{{room_count}} rooms available</h5>
         <a href="{% url 'create-room' %}">Create a Room</a>
-        <div>
-            
-            {% for room in rooms %}
-                <div>
-                    {% if request.user == room.host %}
-                    <a href="{% url 'update-room' room.id %}">Edit</a>
-                    <a href="{% url 'delete-room' room.id %}">Delete</a>
-                    {% endif %}
-                    <span>@{{room.host.username}}</span>
-                    <h5>{{room.id}} -- <a href="{% url 'rooms' room.id %}">{{room.name}}</a></h5>
-                    <small>{{room.topic.name}}</small>
-                    <hr>
-                </div>
-
-            {% endfor %}
-        </div>
+        
+        {% include 'base/feed_component.html' %}
     </div>
     <div>
-        <h3>Recent Activity</h3>
-        <hr>
-        {% for message in room_messages %}
-            <div>
-                <small>@{{message.user}} {{message.created|timesince}}</small>
-                <small>replied to "{{message.room}}"</small>
-
-                <!-- If it's not specified what attribute it should be displaying
-                then the class name is written then it will just the displayed 
-                value -->
-                <p>{{message}}</p>
-                {% if request.user == message.user %}
-                    <a href="{% url 'delete-message' message.id %}">Delete</a>
-                {% endif %}
-                <hr>
-            </div>
-        {% endfor %}
+        <!-- Even if the file is in the same folder when include
+        is used it should be included via which folder the
+        file can be found -->
+        {% include 'base/activity_component.html' %}
     </div>
     
 </div>

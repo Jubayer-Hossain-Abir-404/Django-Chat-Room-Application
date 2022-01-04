@@ -1,0 +1,17 @@
+<h3>Recent Activity</h3>
+<hr>
+{% for message in room_messages %}
+<div>
+    <small>@{{message.user}} {{message.created|timesince}}</small>
+    <small>replied to "{{message.room}}"</small>
+
+    <!-- If it's not specified what attribute it should be displaying
+    then the class name is written then it will just the displayed 
+    value -->
+    <p>{{message}}</p>
+    {% if request.user == message.user %}
+        <a href="{% url 'delete-message' message.id %}">Delete</a>
+    {% endif %}
+    <hr>
+</div>
+{% endfor %}
