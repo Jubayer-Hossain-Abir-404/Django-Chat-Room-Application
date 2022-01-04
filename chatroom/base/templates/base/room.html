@@ -22,6 +22,9 @@
             {% for message in room_messages %}
                 <div>
                     <small>
+                        {% if request.user == message.user %}
+                        <a href="{% url 'delete-message' message.id %}">Delete</a>
+                        {% endif %}
                         <!-- Here timesince can give how much time ago -->
                         @{{message.user}} {{message.created|timesince}} ago
                     </small>
