@@ -150,8 +150,14 @@ def userProfile(request, pk):
     # the model name and underscore set and whatever we want there
     # In this case all of them is being fetched here
     rooms = user.room_set.all()
+    room_messages = user.message_set.all()
+    topics = Topic.objects.all()
     # context dictionary
-    context = {'user': user, 'rooms': rooms}
+    # As the code has been split into many parts 
+    # the variable has to be same in components all over
+    # otherwise it will not work
+    context = {'user': user, 'rooms': rooms, 'room_messages': room_messages,
+    'topics': topics}
     return render(request, 'base/profile.html', context)
 
 # if an user is not authenticated then access will not be provided
