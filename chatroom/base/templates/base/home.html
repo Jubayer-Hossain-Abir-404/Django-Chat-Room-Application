@@ -68,6 +68,10 @@
                 then the class name is written then it will just the displayed 
                 value -->
                 <p>{{message}}</p>
+                {% if request.user == message.user %}
+                    <a href="{% url 'delete-message' message.id %}">Delete</a>
+                {% endif %}
+                <hr>
             </div>
         {% endfor %}
     </div>
