@@ -114,4 +114,10 @@ when url is needed to be used
 
 * No staff is allowed to access in the admin panel
 
+* Django room participants can be created from the admin panel
+
+* If username is only set to lower case then previous 
+users who had uppercase characters will not be able to 
+access
+
 

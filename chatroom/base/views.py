@@ -36,7 +36,8 @@ def loginpage(request):
 
     if request.method == 'POST':
         # user name has to be in lower case 
-        username = request.POST.get('username').lower()
+        # username = request.POST.get('username').lower()
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
         try:
@@ -133,6 +134,7 @@ def rooms(request, pk):
             room = room1,
             body= request.POST.get('body')
         )
+        room1.participants.add(request.user)
         # here rooms is coming from the url name="rooms"
         return redirect('rooms', pk=room1.id)
 
