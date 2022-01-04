@@ -146,8 +146,12 @@ def rooms(request, pk):
 
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
+    # All the children of a specific object can be get by doing 
+    # the model name and underscore set and whatever we want there
+    # In this case all of them is being fetched here
+    rooms = user.room_set.all()
     # context dictionary
-    context = {'user': user}
+    context = {'user': user, 'rooms': rooms}
     return render(request, 'base/profile.html', context)
 
 # if an user is not authenticated then access will not be provided
