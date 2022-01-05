@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Letting this template know that this static tag can be used  -->
+{% load static %}
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,7 +8,7 @@
         <title>Chat Room</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href=""> -->
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     </head>
     <body>
         {% include 'navbar.html' %} 
