@@ -19,3 +19,6 @@ class RoomForm(ModelForm):
         # a user shouldn't be able to specify who they are necessarily in a
         # drop-down menu
         fields = '__all__' # Currently it is just giving all the fields
+
+        # This is how fields can be excluded
+        exclude = ['host', 'participants']
