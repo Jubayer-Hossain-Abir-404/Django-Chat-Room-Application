@@ -171,8 +171,15 @@ def createRoom(request):
         form = RoomForm(request.POST)
         # checks if the form is valid
         if form.is_valid():
+            # Here commit is false. That's gonna give an instance of this room 
+            # Here what happens is that the saved form instance is saved in
+            # room. after that the current user gets saved to room.host and
+            # then saved
+            room = form.save(commit=False)
+            room.host = request.user
+            room.save()
             # saves the form data
-            form.save()
+            # form.save()
             # then the form will be redirected to the home
             return redirect('home')
 
