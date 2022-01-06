@@ -1,3 +1,10 @@
 * ctrl+ ~ to get the terminal
 
 * just type html boiler plate to get the html boiler plate
+
+
+* Another work-around (my installed VS Code v1.53.0)
+
+Select block of code
+Go to "Selection" > "Column Selection mode"
+Hit backspace to shift
