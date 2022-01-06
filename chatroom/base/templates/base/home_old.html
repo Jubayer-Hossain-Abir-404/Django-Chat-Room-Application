@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .home-container{
+        display: grid;
+        /* This stands for one fraction and three fraction */
+        /* Two columns have been created, this is specifying
+        how many fractions of the website or the page that this is 
+        going to take up */
+        /* Two side columns will be one fraction 
+        middle one will take up the most
+        it will be auto adjusted */
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<h1>Home Template</h1>
+
+<div class="home-container">
+
+    <div>
+        {% include 'base/topics_component.html' %}
+    </div>
+
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url 'create-room' %}">Create a Room</a>
+        
+        {% include 'base/feed_component.html' %}
+    </div>
+    <div>
+        <!-- Even if the file is in the same folder when include
+        is used it should be included via which folder the
+        file can be found -->
+        {% include 'base/activity_component.html' %}
+    </div>
+    
+</div>
+
+{% endblock content %}
