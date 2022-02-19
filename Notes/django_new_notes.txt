@@ -1,0 +1,5 @@
+* When it's a full block then percentage is
+used
+
+* When just a single statement then
+{{}}
