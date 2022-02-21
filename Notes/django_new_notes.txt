@@ -3,3 +3,7 @@ used
 
 * When just a single statement then
 {{}}
+
+* The left one is topic commponent
+
+* The right one is feed component
