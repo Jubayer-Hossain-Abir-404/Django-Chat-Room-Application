@@ -225,7 +225,7 @@ def updateRoom(request, pk):
             form.save()
             return redirect('home')
 
-    context = {'form': form, 'topics': topics}
+    context = {'form': form, 'topics': topics, 'room': room}
     return render(request, 'base/room_form.html', context)
 
 @login_required(login_url='login')
