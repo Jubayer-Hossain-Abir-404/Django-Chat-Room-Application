@@ -1,3 +1,4 @@
+from pydoc_data.topics import topics
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -164,35 +165,55 @@ def userProfile(request, pk):
 @login_required(login_url='login')
 def createRoom(request):
     form = RoomForm()
-
+    topics = Topic.objects.all()
     if request.method == 'POST':
         # This prints all the data in the backend
         # print(request.POST)  # here POST is all the data
-        form = RoomForm(request.POST)
+        topic_name = request.POST.get('topic')
+        # get or create is a method
+        # it's gonna return back either an object
+        # or it will return an object and created
+        # and whats going to happen is that if the topic
+        # name is passed for the name value so
+        # if the topic is found in the database then topic
+        # will be true like python but a new topic is created
+        # like java then created will be true and new topic 
+        # will be created
+        topic, created = Topic.objects.get_or_create(name=topic_name)
+
+        Room.objects.create(
+            host=request.user,
+            topic = topic,
+            name= request.POST.get('name'),
+            description = request.POST.get('description')
+        )
+        # form = RoomForm(request.POST)
         # checks if the form is valid
-        if form.is_valid():
+        # if form.is_valid():
             # Here commit is false. That's gonna give an instance of this room 
             # Here what happens is that the saved form instance is saved in
             # room. after that the current user gets saved to room.host and
             # then saved
-            room = form.save(commit=False)
-            room.host = request.user
-            room.save()
+            # room = form.save(commit=False)
+            # room.host = request.user
+            # room.save()
             # saves the form data
             # form.save()
             # then the form will be redirected to the home
-            return redirect('home')
+
+        return redirect('home')
 
 
     
-    context = {'form': form}
-    return render(request, 'base/room_form.html',context)
+    context = {'form': form, 'topics': topics}
+    return render(request, 'base/room_form.html', context)
 
 @login_required(login_url='login')
 def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
     # this prefills the value
     form = RoomForm(instance=room)
+    topics = Topic.objects.all()
 
     if request.user != room.host:
         return HttpResponse('You are not allowed here!!')
@@ -204,7 +225,7 @@ def updateRoom(request, pk):
             form.save()
             return redirect('home')
 
-    context = {'form': form}
+    context = {'form': form, 'topics': topics}
     return render(request, 'base/room_form.html', context)
 
 @login_required(login_url='login')
