@@ -286,3 +286,6 @@ def updateUser(request):
     return render(request, 'base/update-user.html', {'form': form})
 
 
+def topicsPage(request):
+    return render(request, 'base/topics.html', {})
+

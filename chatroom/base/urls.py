@@ -21,5 +21,7 @@ urlpatterns = [
     # here id is not required because the user is going to be 
     # the logged in user
     path('update-user/', views.updateUser, name="update-user"),
+
+    path('topics/', views.topicsPage, name="topics"),
  
 ]
