@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Room
+from django.contrib.auth.models import User
 
 
 # The tradition is here to specify the model name and then form
@@ -22,3 +23,13 @@ class RoomForm(ModelForm):
 
         # This is how fields can be excluded
         exclude = ['host', 'participants']
+
+
+class UserForm(ModelForm):
+    class Meta:
+        # this is the user model
+        model = User
+        # here it is supposed to be fields
+        # the fields which are going to stay
+        # in the form field
+        fields = ['username', 'email']

@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import Room, Topic, Message
-from .forms import RoomForm
+from .forms import RoomForm, UserForm
 
 # from django.http import HttpResponse
 
@@ -272,6 +272,11 @@ def deleteMessage(request, pk):
 
 @login_required(login_url='login')
 def updateUser(request):
-    return render(request, 'base/update-user.html')
+
+    # this instance is going to give the
+    # initial user value
+    user = request.user
+    form = UserForm(instance=user)
+    return render(request, 'base/update-user.html', {'form': form})
 
 
