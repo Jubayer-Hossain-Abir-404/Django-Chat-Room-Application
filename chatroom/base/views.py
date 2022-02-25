@@ -1,4 +1,5 @@
 from pydoc_data.topics import topics
+from unicodedata import name
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -220,10 +221,22 @@ def updateRoom(request, pk):
 
 
     if request.method == 'POST':
-        form = RoomForm(request.POST, instance=room)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
+        topic_name = request.POST.get('topic')
+        topic, created = Topic.objects.get_or_create(name=topic_name)
+        # form = RoomForm(request.POST, instance=room)
+        # if form.is_valid():
+        #     form.save()
+        # here we are gonna get the name
+        # and update it
+        room.name = request.POST.get('name')
+        # here the topic could be newly created topic
+        # or the previous one
+        room.topic = topic
+        room.description = request.POST.get('description')
+        # all the value will be taken and 
+        # then saved
+        room.save()
+        return redirect('home')
 
     context = {'form': form, 'topics': topics, 'room': room}
     return render(request, 'base/room_form.html', context)
