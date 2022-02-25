@@ -17,5 +17,9 @@ urlpatterns = [
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),
     path('delete-room/<str:pk>/', views.deleteRoom, name="delete-room"),
     path('delete-message/<str:pk>/', views.deleteMessage, name="delete-message"),
+
+    # here id is not required because the user is going to be 
+    # the logged in user
+    path('update-user/', views.updateUser, name="update-user"),
  
 ]

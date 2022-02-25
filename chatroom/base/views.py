@@ -269,3 +269,9 @@ def deleteMessage(request, pk):
     # This template is supposed to be dynamic
     return render(request, 'base/delete.html', {'obj': message})
 
+
+@login_required(login_url='login')
+def updateUser(request):
+    return render(request, 'base/update-user.html')
+
+
