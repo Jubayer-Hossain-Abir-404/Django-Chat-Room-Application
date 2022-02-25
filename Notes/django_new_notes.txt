@@ -7,3 +7,6 @@ used
 * The left one is topic commponent
 
 * The right one is feed component
+
+* action is kept blank in django
+form
