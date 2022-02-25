@@ -10,3 +10,6 @@ used
 
 * action is kept blank in django
 form
+
+* when a new user is created, the password can't be the same and as generic
+as 1234
