@@ -109,7 +109,9 @@ def home(request):
         
         ) 
 
-    topics = Topic.objects.all()
+
+    # this will give the first five topics
+    topics = Topic.objects.all()[0:5]
     room_count = rooms1.count()
     room_messages = Message.objects.filter(Q(room__topic__name__icontains=q))
 
