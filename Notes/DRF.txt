@@ -9,3 +9,5 @@ built on top of Django
 specifically for django
 
 * data would be retrived in json format
+
+* API will have it's own url routing system
