@@ -39,3 +39,13 @@ def getRooms(request):
     serializer = RoomSerializer(rooms, many=True)
     # not returning the object but rather the data
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def getRoom(request, pk):
+    room = Room.objects.get(id=pk)
+    # as there is single object which is 
+    # going to be serialized
+    serializer = RoomSerializer(room, many=False)
+    # not returning the object but rather the data
+    return Response(serializer.data)
