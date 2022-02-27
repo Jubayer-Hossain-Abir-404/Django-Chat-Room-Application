@@ -1,0 +1,11 @@
+* API can be used to share data with other
+applications
+
+* Series of urls or endpoints could be called
+and instructions on how to work with data
+
+* So the package which is called Django Rest Framework (DRF)
+built on top of Django
+specifically for django
+
+* data would be retrived in json format
