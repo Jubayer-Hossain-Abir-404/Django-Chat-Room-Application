@@ -21,4 +21,18 @@ project settings Installed_Apps
 * whenever imported files is not working just check the
 python interpreter
 
+* CORS -> Cross Origin Resource Sharing
+
+First install this package for using this resource
+
+* python -m pip install django-cors-headers
+
+Then put it in Installed_Apps in main project settings
+* "corsheaders",
+
+After this put it in the middleware
+
+* "corsheaders.middleware.CorsMiddleware",
+
+
 
