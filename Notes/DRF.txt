@@ -11,3 +11,14 @@ specifically for django
 * data would be retrived in json format
 
 * API will have it's own url routing system
+
+first run this command on the terminal
+* pip install djangorestframework
+
+then this is going to be copy pasted into the main
+project settings Installed_Apps
+
+* whenever imported files is not working just check the
+python interpreter
+
+
