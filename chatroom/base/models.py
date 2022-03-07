@@ -1,6 +1,7 @@
 from django.db import models
 # from django.contrib.auth.models import User # built in way of creating a user this is a default user model
 from django.contrib.auth.models import AbstractUser
+from django.shortcuts import render
 # Create your models here.
 
 class User(AbstractUser):
@@ -9,7 +10,15 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True)
 
-    #avatar = 
+    # image field depends on a third party package
+    # library which is called pillow. That is 
+    # required so that this field works
+    # setting an image url to default for starter
+    # every user by default will have this picture
+    # when a user uploads a picture we are going to tell 
+    # django where to store that picture and how to render
+    # it
+    avatar = models.ImageField(null=True, default="avatar.svg")
 
     # overriding the field so that authentication
     # takes email input

@@ -133,11 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# now this media url is prefixed with images
+MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     # This is how django will know that there is static files inside static 
     BASE_DIR / 'static'
 ]
+
+# Media_ROOT is going to tell django where
+# to upload these uploaded images
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 # There is a different way to upload user defined images
 # and that's why static_root is required
