@@ -1,7 +1,22 @@
 from django.db import models
-from django.contrib.auth.models import User # built in way of creating a user
-
+# from django.contrib.auth.models import User # built in way of creating a user this is a default user model
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
+
+class User(AbstractUser):
+    name = models.CharField(max_length=200, null=True)
+    # the email must be unique
+    email = models.EmailField(unique=True, null=True)
+    bio = models.TextField(null=True)
+
+    #avatar = 
+
+    # overriding the field so that authentication
+    # takes email input
+    USERNAME_FIELD = 'email'
+    # required fields is going to be empty
+    REQUIRED_FIELDS = []
+
 
 class Topic(models.Model):
     name = models.CharField(max_length=200)
@@ -29,7 +44,7 @@ class Room(models.Model):
     participants = models.ManyToManyField(User,related_name='participants', blank=True)
     # here textfield true. can be blank
     # it means when form is submitted description can be blank
-    # participants = 
+    # participants = make
     # all the participants will be kept in there
     updated = models.DateTimeField(auto_now=True) 
     # this will change everytime instance is saved 
